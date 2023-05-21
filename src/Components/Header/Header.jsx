@@ -19,7 +19,8 @@ const Header = () => {
                         <Link to="/"><img width="150px" src={logo} alt="" /></Link>
                     </div>
                     <div className='flex gap-4'>
-                        <Link to="/">My Account</Link>
+                        <Link to="/login">Login</Link>
+                        <Link to="/registration">Registration</Link>
                     </div>
                 </div>
             </nav>
