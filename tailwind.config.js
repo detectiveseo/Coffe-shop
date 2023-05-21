@@ -9,7 +9,9 @@ export default {
     extend: {},
     colors: {
       colors: {
-        "light-orange": "#db9457",
+        secondary: "3a3a3b",
+        acet: "#db9457",
+        gray: "#f6f6f7",
       }
     }
   },
