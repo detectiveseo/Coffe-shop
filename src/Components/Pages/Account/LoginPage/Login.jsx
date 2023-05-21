@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import loginImage from '../../../../img/login.png'
+import { loginFormHandle } from '../functons';
 
 const Login = () => {
     return (
         <div className='flex'>
             <div className='w-3/12 shadow-xl'>
                 <div className='py-3 px-6'>
-                    <form action="">
+                    <form onSubmit={loginFormHandle}>
                         <label 
                         className='font-mono' 
                         htmlFor="email">Email
@@ -24,9 +25,9 @@ const Login = () => {
                         htmlFor="email">Password
                             <input
                                 type='Password'
-                                name='email'
+                                name='password'
                                 placeholder="Password"
-                                id='email'
+                                id='password'
                                 required
                                 className='border p-2 w-full' />
                         </label>
