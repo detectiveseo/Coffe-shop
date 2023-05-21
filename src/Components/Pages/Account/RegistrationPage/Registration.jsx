@@ -1,11 +1,22 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {registrationFormHandle} from '../functons'
 import registrationImage from '../../../../img/registration.png'
 import { AuthContext } from '../AuthProvider';
 
 const Registration = () => {
-    const {clickToSingInAndUp} = useContext(AuthContext)
+    const { clickToSingInAndUp, uesrWithEmailAndPassword, user } = useContext(AuthContext)
+
+    function registrationFormHandle(event) {
+        event.preventDefault();
+        const form = event.target;
+        const firstName = form.firest_name.value;
+        const lastName = form.last_name.value;
+        const email = form.email.value;
+        const photoUrl = form.photo_url.value;
+        const password = form.password.value;
+
+        uesrWithEmailAndPassword(email, password, firstName, lastName, photoUrl)
+    }
     return (
         <div className='flex'>
             <div className='w-9/12 flex justify-start'>
@@ -79,7 +90,7 @@ const Registration = () => {
                                 value="Login Now"
                                 className='btn border border-colors-accent py-2 px-3 font-mono' />
                         </div>
-                        
+
                     </form>
                     <div className='flex justify-center items-center mt-10'>
                         <hr className='border border-t-10 w-full' />
@@ -87,9 +98,9 @@ const Registration = () => {
                         <hr className='border border-t-10 w-full' />
                     </div>
                     <div className='flex gap-3 justify-center mt-7'>
-                        <span 
-                        onClick={clickToSingInAndUp}
-                        className='border text-colors-accent border-colors-blck text-center py-2 px-4 font-mono'> google</span>
+                        <span
+                            onClick={clickToSingInAndUp}
+                            className='border text-colors-accent border-colors-blck text-center py-2 px-4 font-mono'> google</span>
                         <span className='border text-colors-accent border-colors-blck text-center py-2 px-4 font-mono'> github</span>
                         <span className='border text-colors-accent border-colors-blck text-center py-2 px-4 font-mono'> facebook</span>
                     </div>

@@ -1,8 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/Amaya-logo.png'
-
+import { AuthContext } from '../Pages/Account/AuthProvider';
 const Header = () => {
+    const {loader, user} = useContext(AuthContext);
+    console.log(loader)
     return (
         <div>
             <div className='text-center py-1 bg-colors-secondary text-colors-white font-mono'><span>FREE SHIPPING ON ORDERS OF $35+
@@ -21,6 +23,7 @@ const Header = () => {
                     <div className='flex gap-4'>
                         <Link to="/login">Login</Link>
                         <Link to="/registration">Registration</Link>
+                        <p>{loader ? "Loading.." : `${user.displayName}`}</p>
                     </div>
                 </div>
             </nav>
