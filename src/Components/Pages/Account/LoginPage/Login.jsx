@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import loginImage from '../../../../img/login.png'
 
 const Login = () => {
@@ -29,12 +30,14 @@ const Login = () => {
                                 required
                                 className='border p-2 w-full' />
                         </label>
+                        <p>Do you have already account ? <Link className='text-colors-accent' to="/registration">Registration</Link></p>
                         <div className='text-center mt-5'>
                             <input
                                 type="submit"
                                 value="Login Now"
                                 className='btn border border-colors-accent py-2 px-3 font-mono' />
                         </div>
+
                     </form>
                     <div className='flex justify-center items-center mt-10'>
                         <hr  className='border border-t-10 w-full'/>
