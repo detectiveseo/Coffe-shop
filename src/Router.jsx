@@ -4,6 +4,7 @@ import App from './App';
 import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Account/LoginPage/Login';
 import Registration from './Components/Pages/Account/RegistrationPage/Registration';
+import Addcoffee from './Components/Pages/AddCoffee/Addcoffee';
 
 const Router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const Router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />
+            },
+            {
+                path: "/add-coffee",
+                element: <Addcoffee />
             },
             {
                 path: "/login",
