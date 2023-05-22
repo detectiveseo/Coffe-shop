@@ -14,7 +14,7 @@ const Header = () => {
                 <div className='flex justify-between items-center uppercase font-bold w-11/12 mx-auto h-20'>
                     <div className='flex gap-4'>
                         <Link to="/">Home</Link>
-                        <Link to="/">Coffees</Link>
+                        <Link to="/coffees">Coffees</Link>
                         <Link to="/">Service</Link>
                         <Link to="/add-coffee">Add Coffee</Link>
                     </div>

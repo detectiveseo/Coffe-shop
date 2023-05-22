@@ -14,7 +14,16 @@ export function addCoffeFormHandle(event) {
         origin,
         price,
     }
-    console.log(
-        cofffesData
-    )
+
+    fetch("http://localhost:8585/add_coffee",{
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify(cofffesData),
+    }).then((res) => {
+        res.json()
+    }).then((data) => {
+        console.log(data)
+    })
 }
